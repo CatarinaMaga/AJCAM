@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJCAM LINYX - Monitoramento Inteligente de EPIs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Azul muito claro */
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #e0f2f7; /* Azul claro */
+            color: #0056b3; /* Azul escuro para o texto do header */
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #add8e6; /* Azul claro um pouco mais escuro */
+        }
+        header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        section {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+            border-bottom: 2px solid #e0f2f7;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #007bff; /* Azul vibrante */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e0f2f7; /* Azul claro para itens de lista */
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+        ol {
+            counter-reset: my-awesome-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: my-awesome-counter;
+            background: #e0f2f7; /* Azul claro para itens de lista ordenada */
+            margin-bottom: 10px;
+            padding: 15px 15px 15px 50px; /* Mais padding à esquerda para o número */
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+            position: relative;
+            font-size: 1.1em;
+        }
+        ol li::before {
+            content: counter(my-awesome-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #007bff;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        footer {
+            background-color: #e0f2f7;
+            color: #0056b3;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 2px solid #add8e6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="your-image-url.png" alt="AJCAM LINYX Logo"> <h1>AJCAM LINYX</h1>
+        <p>Tecnologia e Conscientização para a Segurança no Trabalho</p>
+    </header>
+
+    <div class="container">
+        <section id="sobre">
+            <h2>Sobre a AJCAM LINYX</h2>
+            <p>A AJCAM LINYX é uma empresa de tecnologia dedicada a <span class="highlight">garantir a segurança individual e coletiva</span> no ambiente de trabalho. Desenvolvemos um <span class="highlight">sistema inteligente de monitoramento</span> para a utilização de Equipamentos de Proteção Individual (EPIs), assegurando que os trabalhadores não apenas permaneçam com seus equipamentos, mas também os utilizem de maneira adequada e contínua.</p>
+        </section>
+
+        <section id="produtos">
+            <h2>Nossos Produtos</h2>
+            <p>Para o funcionamento eficaz do nosso sistema, contamos com equipamentos de alta tecnologia:</p>
+            <ul>
+                <li><strong>Totem:</strong> Ponto central para identificação e verificação inicial de EPIs.</li>
+                <li><strong>Câmeras Inteligentes:</strong> Responsáveis pela verificação de QR codes e monitoramento em tempo real no local de trabalho.</li>
+                <li><strong>Telas de TV:</strong> Para exibição de alertas e informações importantes aos trabalhadores.</li>
+            </ul>
+        </section>
+
+        <section id="como-funciona">
+            <h2>Como Nosso Sistema Funciona - As 4 Etapas</h2>
+            <p>Nosso sistema opera de forma intuitiva e eficiente, dividindo o processo de monitoramento em quatro etapas cruciais:</p>
+            <ol>
+                <li>
+                    <h3>Etapa 1: Identificação no Totem</h3>
+                    <p>Localizado na área de EPIs, o totem utiliza <span class="highlight">reconhecimento facial</span> para identificar o colaborador e exibir os EPIs obrigatórios para sua função específica.</p>
+                </li>
+                <li>
+                    <h3>Etapa 2: Verificação dos EPIs (Totem)</h3>
+                    <p>Após vestir os EPIs, o trabalhador consulta a <span class="highlight">câmera do totem</span> para verificar se está vestido corretamente, recebendo feedback imediato.</p>
+                </li>
+                <li>
+                    <h3>Etapa 3: Verificação por Câmeras (QR Code)</h3>
+                    <p>Cada EPI possui um ou mais <span class="highlight">QR codes</span>. Câmeras instaladas no local de trabalho identificam esses códigos. Em caso de erro ou item faltando, um <span class="highlight">alerta é emitido imediatamente</span>.</p>
+                </li>
+                <li>
+                    <h3>Etapa 4: Monitoramento em Tempo Real</h3>
+                    <p>As câmeras do ambiente de trabalho monitoram continuamente o uso adequado dos EPIs. Ao detectar qualquer irregularidade, um <span class="highlight">sinal sonoro é ativado</span>, o nome do colaborador é exibido em alerta em uma <span class="highlight">tela de TV</span>, e o trabalhador é notificado para a correção imediata.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="objetivo">
+            <h2>Nosso Objetivo</h2>
+            <p>Nosso principal objetivo é <span class="highlight">garantir a segurança individual e coletiva</span> através da inovação tecnológica e da <span class="highlight">conscientização contínua</span>. Acreditamos que a prevenção é a melhor ferramenta contra acidentes de trabalho.</p>
+        </section>
+
+        <section id="plataforma-aprendizagem">
+            <h2>Plataforma de Aprendizagem e Atualização</h2>
+            <p>Além do monitoramento, a AJCAM LINYX oferece uma plataforma robusta de aprendizagem e atualização. Nosso propósito é <span class="highlight">promover a conscientização</span> no uso dos EPIs, esclarecendo a importância vital desses equipamentos e, assim, <span class="highlight">evitando ao máximo acidentes</span>.</p>
+            <p>Este sistema de informações sobre o uso dos EPIs fornece:</p>
+            <ul>
+                <li><span class="highlight">Orientações</span> sobre o uso correto de cada equipamento.</li>
+                <li><span class="highlight">Informações</span> sobre prazos de validade e necessidade de substituição.</li>
+                <li><span class="highlight">Garantia</span> da rastreabilidade e controle da entrega desses equipamentos.</li>
+                <li><span class="highlight">Auxílio</span> na capacitação e conscientização dos colaboradores.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AJCAM LINYX. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
