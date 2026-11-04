@@ -1,189 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJCAM LINYX - Monitoramento Inteligente de EPIs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff; /* Azul muito claro */
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #e0f2f7; /* Azul claro */
-            color: #0056b3; /* Azul escuro para o texto do header */
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid #add8e6; /* Azul claro um pouco mais escuro */
-        }
-        header img {
-            max-width: 150px;
-            margin-bottom: 10px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.1em;
-            margin-top: 5px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-        section {
-            background-color: #ffffff;
-            margin-bottom: 20px;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #0056b3;
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 2em;
-            border-bottom: 2px solid #e0f2f7;
-            padding-bottom: 10px;
-        }
-        h3 {
-            color: #007bff; /* Azul vibrante */
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: #e0f2f7; /* Azul claro para itens de lista */
-            margin-bottom: 10px;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            border-radius: 4px;
-            font-size: 1.1em;
-        }
-        ol {
-            counter-reset: my-awesome-counter;
-            list-style: none;
-            padding-left: 0;
-        }
-        ol li {
-            counter-increment: my-awesome-counter;
-            background: #e0f2f7; /* Azul claro para itens de lista ordenada */
-            margin-bottom: 10px;
-            padding: 15px 15px 15px 50px; /* Mais padding à esquerda para o número */
-            border-left: 5px solid #007bff;
-            border-radius: 4px;
-            position: relative;
-            font-size: 1.1em;
-        }
-        ol li::before {
-            content: counter(my-awesome-counter);
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #007bff;
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #0056b3;
-        }
-        footer {
-            background-color: #e0f2f7;
-            color: #0056b3;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-            border-top: 2px solid #add8e6;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05075a">
+  <meta name="description" content="Conheça a AJCAM Linyx e o Argos EPI: monitoramento inteligente do uso de equipamentos de proteção individual com visão computacional.">
+  <link rel="canonical" href="https://ajcam.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AJCAM Linyx">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://ajcam.vercel.app/">
+  <meta property="og:title" content="AJCAM Linyx — Argos EPI">
+  <meta property="og:description" content="Tecnologia para transformar observação em prevenção.">
+  <meta property="og:image" content="https://ajcam.vercel.app/assets/og-argos.png?v=20261030">
+  <meta property="og:image:secure_url" content="https://ajcam.vercel.app/assets/og-argos.png?v=20261030">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo da AJCAM Linyx sobre fundo azul-marinho">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AJCAM Linyx — Argos EPI">
+  <meta name="twitter:description" content="Tecnologia para transformar observação em prevenção.">
+  <meta name="twitter:image" content="https://ajcam.vercel.app/assets/og-argos.png?v=20261030">
+  <meta name="twitter:image:alt" content="Logotipo da AJCAM Linyx sobre fundo azul-marinho">
+  <title>AJCAM Linyx — Argos EPI</title>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/logo-argos.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <header>
-        <img src="icon.png" alt="AJCAM LINYX Logo"> <h1>AJCAM LINYX</h1>
-        <p>Tecnologia e Conscientização para a Segurança no Trabalho</p>
-    </header>
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="AJCAM Linyx e Argos EPI — início">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/logo-argos.png" alt="">
+      </span>
+      <span class="brand-copy"><strong>AJCAM</strong><small>ARGOS EPI</small></span>
+    </a>
 
-    <div class="container">
-        <section id="sobre">
-            <h2>Sobre a AJCAM LINYX</h2>
-            <p>A AJCAM LINYX é uma empresa de tecnologia dedicada a <span class="highlight">garantir a segurança individual e coletiva</span> no ambiente de trabalho. Desenvolvemos um <span class="highlight">sistema inteligente de monitoramento</span> para a utilização de Equipamentos de Proteção Individual (EPIs), assegurando que os trabalhadores não apenas permaneçam com seus equipamentos, mas também os utilizem de maneira adequada e contínua.</p>
-        </section>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-button>
+      <span></span><span></span><span></span><span class="sr-only" data-menu-label>Abrir menu</span>
+    </button>
 
-        <section id="produtos">
-            <h2>Nossos Produtos</h2>
-            <p>Para o funcionamento eficaz do nosso sistema, contamos com equipamentos de alta tecnologia:</p>
-            <ul>
-                <li><strong>Totem:</strong> Ponto central para identificação e verificação inicial de EPIs.</li>
-                <li><strong>Câmeras Inteligentes:</strong> Responsáveis pela verificação de QR codes e monitoramento em tempo real no local de trabalho.</li>
-                <li><strong>Telas de TV:</strong> Para exibição de alertas e informações importantes aos trabalhadores.</li>
-            </ul>
-        </section>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal" data-nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#historico">Histórico</a>
+      <a href="#demonstracao">Demonstração</a>
+      <a href="#equipe">Equipe</a>
+      <a class="nav-cta" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-        <section id="como-funciona">
-            <h2>Como Nosso Sistema Funciona - As 4 Etapas</h2>
-            <p>Nosso sistema opera de forma intuitiva e eficiente, dividindo o processo de monitoramento em quatro etapas cruciais:</p>
-            <ol>
-                <li>
-                    <h3>Etapa 1: Identificação no Totem</h3>
-                    <p>Localizado na área de EPIs, o totem utiliza <span class="highlight">reconhecimento facial</span> para identificar o colaborador e exibir os EPIs obrigatórios para sua função específica.</p>
-                </li>
-                <li>
-                    <h3>Etapa 2: Verificação dos EPIs (Totem)</h3>
-                    <p>Após vestir os EPIs, o trabalhador consulta a <span class="highlight">câmera do totem</span> para verificar se está vestido corretamente, recebendo feedback imediato.</p>
-                </li>
-                <li>
-                    <h3>Etapa 3: Verificação por Câmeras (QR Code)</h3>
-                    <p>Cada EPI possui um ou mais <span class="highlight">QR codes</span>. Câmeras instaladas no local de trabalho identificam esses códigos. Em caso de erro ou item faltando, um <span class="highlight">alerta é emitido imediatamente</span>.</p>
-                </li>
-                <li>
-                    <h3>Etapa 4: Monitoramento em Tempo Real</h3>
-                    <p>As câmeras do ambiente de trabalho monitoram continuamente o uso adequado dos EPIs. Ao detectar qualquer irregularidade, um <span class="highlight">sinal sonoro é ativado</span>, o nome do colaborador é exibido em alerta em uma <span class="highlight">tela de TV</span>, e o trabalhador é notificado para a correção imediata.</p>
-                </li>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Tecnologia aplicada à segurança do trabalho</p>
+        <h1 id="hero-title">Veja o risco.<br><em>Antecipe a ação.</em></h1>
+        <p class="hero-lead">O Argos EPI combina câmeras, visão computacional e inteligência artificial para apoiar o monitoramento do uso de equipamentos de proteção individual — com alertas claros e histórico auditável.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demonstracao">Ver o sistema <span aria-hidden="true">▶</span></a>
+          <a class="button button-ghost" href="#sobre">Conhecer a AJCAM <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-proof" aria-label="Resumo do projeto">
+          <div><strong>15</strong><span>classes de EPI</span></div>
+          <div><strong>27 mil</strong><span>imagens de treino</span></div>
+          <div><strong>2026</strong><span>TCC SENAI</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stage reveal reveal-delay" aria-label="Prévia do monitoramento Argos EPI">
+        <div class="stage-orbit orbit-a" aria-hidden="true"></div>
+        <div class="stage-orbit orbit-b" aria-hidden="true"></div>
+        <div class="camera-window">
+          <div class="window-bar">
+            <div class="window-brand"><span class="pulse-dot"></span> Câmera 02 · Pátio</div>
+            <div class="window-status">AO VIVO</div>
+          </div>
+          <div class="camera-image">
+            <img src="assets/demo-cameras.jpg" alt="Tela do Argos EPI monitorando trabalhadores em duas câmeras">
+            <span class="scan-line" aria-hidden="true"></span>
+            <div class="vision-tag vision-tag-safe"><span>✓</span> EPI completo</div>
+            <div class="vision-tag vision-tag-alert"><span>!</span> Colete ausente</div>
+          </div>
+          <div class="window-footer">
+            <span><i class="status-safe"></i> Área segura</span>
+            <span><i class="status-alert"></i> 1 ação necessária</span>
+          </div>
+        </div>
+        <div class="floating-card floating-card-alert">
+          <span class="floating-icon">!</span>
+          <div><small>ALERTA DETECTADO</small><strong>Falta de colete</strong></div>
+        </div>
+        <div class="floating-card floating-card-ai">
+          <span class="floating-icon ai-icon">◎</span>
+          <div><small>ANÁLISE ATIVA</small><strong>Visão computacional</strong></div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#sobre"><span>Role para explorar</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <section class="section section-light" id="sobre" aria-labelledby="sobre-title">
+      <div class="section-heading reveal">
+        <p class="kicker">01 · SOBRE</p>
+        <h2 id="sobre-title">Prevenção orientada por <em>informação.</em></h2>
+        <p>A AJCAM Linyx é uma equipe de desenvolvimento de sistemas do SENAI Lauro de Freitas. Nosso projeto, o Argos EPI, nasceu para apoiar quem precisa acompanhar ambientes operacionais com atenção contínua.</p>
+      </div>
+
+      <div class="value-grid">
+        <article class="value-card reveal">
+          <span class="value-number">01</span>
+          <div class="value-icon" aria-hidden="true">◉</div>
+          <h3>Detectar</h3>
+          <p>Identifica pessoas e EPIs visíveis em imagens de câmeras conectadas ao sistema.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-1">
+          <span class="value-number">02</span>
+          <div class="value-icon" aria-hidden="true">⌁</div>
+          <h3>Contextualizar</h3>
+          <p>Aplica as exigências definidas para cada área e relaciona o resultado à pessoa monitorada.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-2">
+          <span class="value-number">03</span>
+          <div class="value-icon" aria-hidden="true">↯</div>
+          <h3>Alertar</h3>
+          <p>Destaca possíveis ausências de EPI em tempo útil, com sinais visuais e sonoros.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-3">
+          <span class="value-number">04</span>
+          <div class="value-icon" aria-hidden="true">▤</div>
+          <h3>Aprender</h3>
+          <p>Organiza ocorrências e indicadores para orientar prevenção e melhoria contínua.</p>
+        </article>
+      </div>
+
+      <div class="principle-banner reveal">
+        <p>O Argos EPI não substitui o profissional de Segurança do Trabalho.</p>
+        <strong>Ele amplia a capacidade de observar, registrar e agir.</strong>
+        <span aria-hidden="true">→</span>
+      </div>
+    </section>
+
+
+    <section class="section section-light" id="historico" aria-labelledby="historico-title">
+      <div class="history-layout">
+        <div class="history-copy reveal">
+          <p class="kicker">02 · HISTÓRICO</p>
+          <h2 id="historico-title">Evoluir, medir, <em>refinar.</em></h2>
+          <p>O protótipo saiu de uma análise simples por quadro para uma avaliação por pessoa, com rastreamento, regiões do corpo e tratamento de oclusão.</p>
+          <div class="version-chip"><span>VERSÃO DOCUMENTADA</span><strong>20.4.2</strong></div>
+          <a class="text-link" href="https://argosepi.vercel.app/" target="_blank" rel="noreferrer">Conhecer o sistema Argos EPI <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="metrics-grid reveal reveal-delay">
+          <article class="metric-card metric-primary">
+            <p>Modelo próprio</p>
+            <strong><span data-count="0.683">0,683</span></strong>
+            <small>mAP@0,5 no conjunto de teste</small>
+          </article>
+          <article class="metric-card">
+            <p>Base de treino</p>
+            <strong><span data-count="27">27</span> mil</strong>
+            <small>imagens em 120 épocas</small>
+          </article>
+          <article class="metric-card">
+            <p>Oclusão simulada</p>
+            <strong><span class="metric-strike">50</span> → 0</strong>
+            <small>alarmes falsos no teste documentado</small>
+          </article>
+          <article class="metric-card">
+            <p>API do servidor</p>
+            <strong><span data-count="122">122</span></strong>
+            <small>rotas HTTP + conexões em tempo real</small>
+          </article>
+        </div>
+      </div>
+
+      <div class="evolution-strip reveal" aria-label="Evolução das versões">
+        <div><span>v14</span><p>Primeiro protótipo desktop</p></div>
+        <i aria-hidden="true"></i>
+        <div><span>v19</span><p>IA por pessoa e rastreamento</p></div>
+        <i aria-hidden="true"></i>
+        <div><span>v20</span><p>Arquitetura com vários servidores</p></div>
+        <i aria-hidden="true"></i>
+        <div><span>20.4</span><p>WebRTC, TV de avisos e Full HD</p></div>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demonstracao" aria-labelledby="demo-title">
+      <div class="section-heading section-heading-inverse reveal">
+        <p class="kicker">03 · DEMONSTRAÇÃO</p>
+        <h2 id="demo-title">Do frame ao <em>alerta acionável.</em></h2>
+        <p>Explore o fluxo do sistema e simule uma possível ausência de EPI.</p>
+      </div>
+
+      <div class="demo-workspace reveal">
+        <div class="demo-toolbar">
+          <div><span class="live-dot"></span><strong>SIMULAÇÃO AO VIVO</strong></div>
+          <span>CÂMERA · ÁREA DE PRODUÇÃO 01</span>
+        </div>
+        <div class="demo-grid">
+          <div class="simulator" data-simulator>
+            <div class="simulator-scene">
+              <img src="assets/demo-cameras.jpg" alt="Exemplo de visão do painel com detecção de trabalhadores">
+              <span class="sim-scan" aria-hidden="true"></span>
+              <div class="person-box person-a is-safe" data-person-a>
+                <span class="person-label">PESSOA 01 · <b>SEGURO</b></span>
+              </div>
+              <div class="person-box person-b is-safe" data-person-b>
+                <span class="person-label">PESSOA 02 · <b>SEGURO</b></span>
+              </div>
+            </div>
+            <div class="simulator-controls">
+              <div>
+                <p>Teste o comportamento</p>
+                <span data-sim-description>Todos os EPIs exigidos foram identificados.</span>
+              </div>
+              <div class="control-buttons">
+                <button class="control-button control-alert" type="button" data-remove-epi><span>−</span> Simular falta de capacete</button>
+                <button class="control-button control-reset" type="button" data-reset-epi><span>↺</span> Restaurar</button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="event-panel" aria-label="Eventos da simulação">
+            <div class="event-panel-head"><span>EVENTOS</span><span data-event-count>02</span></div>
+            <div class="event-status is-safe" data-event-status>
+              <span class="event-status-icon">✓</span>
+              <div><small>STATUS DA ÁREA</small><strong data-event-title>Operação segura</strong></div>
+            </div>
+            <ol class="event-log" data-event-log>
+              <li><time>AGORA</time><span><b>Monitoramento iniciado</b>2 pessoas identificadas</span></li>
+              <li><time>−01s</time><span><b>Regras carregadas</b>Capacete + colete refletivo</span></li>
             </ol>
-        </section>
+            <div class="event-legend"><span><i class="status-safe"></i> Conforme</span><span><i class="status-alert"></i> Atenção</span></div>
+          </aside>
+        </div>
+      </div>
 
-        <section id="objetivo">
-            <h2>Nosso Objetivo</h2>
-            <p>Nosso principal objetivo é <span class="highlight">garantir a segurança individual e coletiva</span> através da inovação tecnológica e da <span class="highlight">conscientização contínua</span>. Acreditamos que a prevenção é a melhor ferramenta contra acidentes de trabalho.</p>
-        </section>
+      <div class="flow-tabs reveal">
+        <div class="flow-tab-list" role="tablist" aria-label="Etapas do Argos EPI">
+          <button class="flow-tab is-active" type="button" role="tab" aria-selected="true" data-flow="detectar"><span>01</span> Detectar</button>
+          <button class="flow-tab" type="button" role="tab" aria-selected="false" data-flow="comparar"><span>02</span> Comparar</button>
+          <button class="flow-tab" type="button" role="tab" aria-selected="false" data-flow="alertar"><span>03</span> Alertar</button>
+          <button class="flow-tab" type="button" role="tab" aria-selected="false" data-flow="registrar"><span>04</span> Registrar</button>
+        </div>
+        <div class="flow-panel">
+          <div class="flow-image"><img src="assets/demo-cameras.jpg" alt="Tela de câmeras do Argos EPI" data-flow-image></div>
+          <div class="flow-copy">
+            <p data-flow-kicker>VISÃO COMPUTACIONAL</p>
+            <h3 data-flow-title>Pessoas e EPIs são identificados no vídeo.</h3>
+            <p data-flow-text>O sistema recebe a imagem da câmera, encontra cada pessoa e relaciona os equipamentos visíveis às regiões corretas do corpo.</p>
+          </div>
+        </div>
+      </div>
 
-        <section id="plataforma-aprendizagem">
-            <h2>Plataforma de Aprendizagem e Atualização</h2>
-            <p>Além do monitoramento, a AJCAM LINYX oferece uma plataforma robusta de aprendizagem e atualização. Nosso propósito é <span class="highlight">promover a conscientização</span> no uso dos EPIs, esclarecendo a importância vital desses equipamentos e, assim, <span class="highlight">evitando ao máximo acidentes</span>.</p>
-            <p>Este sistema de informações sobre o uso dos EPIs fornece:</p>
-            <ul>
-                <li><span class="highlight">Orientações</span> sobre o uso correto de cada equipamento.</li>
-                <li><span class="highlight">Informações</span> sobre prazos de validade e necessidade de substituição.</li>
-                <li><span class="highlight">Garantia</span> da rastreabilidade e controle da entrega desses equipamentos.</li>
-                <li><span class="highlight">Auxílio</span> na capacitação e conscientização dos colaboradores.</li>
-            </ul>
-        </section>
-    </div>
+      <div class="video-block reveal">
+        <div class="video-heading">
+          <div><p class="kicker">PITCH COMPLETO</p><h3>Assista à apresentação do projeto.</h3></div>
+          <p>Contexto, proposta e demonstração do sistema em uma única experiência.</p>
+        </div>
+        <div class="video-shell">
+          <video controls preload="metadata" poster="assets/demo-cameras.jpg" playsinline>
+            <source src="assets/pitch-argos-epi.mp4" type="video/mp4">
+            Seu navegador não oferece suporte a vídeo HTML5.
+          </video>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2023 AJCAM LINYX. Todos os direitos reservados.</p>
-    </footer>
+    <section class="section section-light team-section" id="equipe" aria-labelledby="equipe-title">
+      <div class="section-heading reveal">
+        <p class="kicker">04 · EQUIPE</p>
+        <h2 id="equipe-title">Cinco pessoas. <em>Uma visão.</em></h2>
+        <p>A AJCAM Linyx reúne pesquisa, desenvolvimento, documentação e experiência de interface em um projeto construído de ponta a ponta.</p>
+      </div>
 
+      <div class="team-grid">
+        <article class="member-card reveal">
+          <div class="member-photo member-photo-from-sheet photo-adriele" role="img" aria-label="Foto de Adriele Araújo"></div>
+          <div class="member-copy"><span>01</span><h3>Adriele<br>Araújo</h3><p>AJCAM Linyx</p></div>
+        </article>
+        <article class="member-card reveal reveal-delay-1">
+          <div class="member-photo member-photo-from-sheet photo-andre" role="img" aria-label="Foto de André Jorge Santos"></div>
+          <div class="member-copy"><span>02</span><h3>André Jorge<br>Santos</h3><p>AJCAM Linyx</p></div>
+        </article>
+        <article class="member-card reveal reveal-delay-2">
+          <div class="member-photo member-photo-from-sheet photo-ana" role="img" aria-label="Foto de Ana Catarina Paixão"></div>
+          <div class="member-copy"><span>03</span><h3>Ana Catarina<br>Paixão</h3><p>AJCAM Linyx</p></div>
+        </article>
+        <article class="member-card reveal reveal-delay-3">
+          <div class="member-photo member-photo-from-sheet photo-catarina" role="img" aria-label="Foto de Catarina Magalhães"></div>
+          <div class="member-copy"><span>04</span><h3>Catarina<br>Magalhães</h3><p>AJCAM Linyx</p></div>
+        </article>
+        <article class="member-card reveal reveal-delay-4">
+          <div class="member-photo member-photo-placeholder"><span>NS</span><small>Foto pendente</small></div>
+          <div class="member-copy"><span>05</span><h3>Nicolas<br>dos Santos</h3><p>AJCAM Linyx</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato" aria-labelledby="contato-title">
+      <div class="contact-orb" aria-hidden="true"></div>
+      <div class="contact-copy reveal">
+        <p class="kicker">05 · CONTATO</p>
+        <h2 id="contato-title">Vamos construir ambientes <em>mais seguros?</em></h2>
+        <p>Fale com a equipe para conhecer o projeto, colaborar ou acompanhar a evolução do Argos EPI.</p>
+      </div>
+      <div class="contact-actions reveal reveal-delay">
+        <a class="contact-card" href="mailto:ajcamlinxy@gmail.com">
+          <span class="contact-icon" aria-hidden="true">@</span>
+          <div><small>E-MAIL</small><strong>ajcamlinxy@gmail.com</strong></div>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a class="contact-card" href="https://www.instagram.com/ajcamlinxy/" target="_blank" rel="noreferrer">
+          <span class="contact-icon" aria-hidden="true">◉</span>
+          <div><small>INSTAGRAM</small><strong>@ajcamlinxy</strong></div>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a class="contact-card" href="https://www.canva.com/design/DAHUQ3aBDC0/_upKfowf9K7s3U8moy3x1w/edit" target="_blank" rel="noreferrer">
+          <span class="contact-icon" aria-hidden="true">◎</span>
+          <div><small>APRESENTAÇÃO DA EQUIPE</small><strong>Abrir material no Canva</strong></div>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a class="contact-card" href="https://github.com/CatarinaMaga/AJCAM" target="_blank" rel="noreferrer">
+          <span class="contact-icon" aria-hidden="true">⌘</span>
+          <div><small>GITHUB</small><strong>Repositório AJCAM</strong></div>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark"><img src="assets/logo-argos.png" alt=""></span><span class="brand-copy"><strong>AJCAM</strong><small>ARGOS EPI</small></span></a>
+    <p>Projeto de conclusão do Curso Técnico em Desenvolvimento de Sistemas · SENAI Lauro de Freitas/BA · 2026</p>
+    <div><a href="https://argosepi.vercel.app/" target="_blank" rel="noreferrer">Argos EPI ↗</a><a href="https://github.com/CatarinaMaga/AJCAM" target="_blank" rel="noreferrer">AJCAM ↗</a></div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="app.js"></script>
 </body>
 </html>
