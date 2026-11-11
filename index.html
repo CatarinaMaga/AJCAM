@@ -154,44 +154,64 @@
       <div class="history-layout">
         <div class="history-copy reveal">
           <p class="kicker">02 · HISTÓRICO</p>
-          <h2 id="historico-title">Evoluir, medir, <em>refinar.</em></h2>
-          <p>O protótipo saiu de uma análise simples por quadro para uma avaliação por pessoa, com rastreamento, regiões do corpo e tratamento de oclusão.</p>
+          <h2 id="historico-title">Do primeiro protótipo ao <em>monitoramento em tempo real.</em></h2>
+          <p class="history-lead">O Argos EPI começou analisando imagens isoladas. Com a evolução do projeto, passou a acompanhar cada pessoa, identificar os EPIs e reduzir alertas incorretos.</p>
+
+          <ol class="history-steps" aria-label="Resumo da evolução do Argos EPI">
+            <li>
+              <span aria-hidden="true">1</span>
+              <div><strong>No início</strong><p>O protótipo verificava cada imagem separadamente.</p></div>
+            </li>
+            <li>
+              <span aria-hidden="true">2</span>
+              <div><strong>Depois</strong><p>Passou a reconhecer e acompanhar cada trabalhador.</p></div>
+            </li>
+            <li>
+              <span aria-hidden="true">3</span>
+              <div><strong>Hoje</strong><p>Lida melhor com pessoas parcialmente encobertas e envia alertas em tempo real.</p></div>
+            </li>
+          </ol>
+
           <div class="version-chip"><span>VERSÃO DOCUMENTADA</span><strong>20.4.2</strong></div>
           <a class="text-link" href="https://argosepi.vercel.app/" target="_blank" rel="noreferrer">Conhecer o sistema Argos EPI <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="metrics-grid reveal reveal-delay">
+        <div class="metrics-grid reveal reveal-delay" aria-label="Resultados alcançados pelo projeto">
           <article class="metric-card metric-primary">
-            <p>Modelo próprio</p>
-            <strong><span data-count="0.683">0,683</span></strong>
-            <small>mAP@0,5 no conjunto de teste</small>
+            <p>Desempenho da IA</p>
+            <strong><span data-count="68.3">68,3</span><span class="metric-unit">%</span></strong>
+            <small>Índice mAP@0,5: mede a qualidade das detecções realizadas nos testes.</small>
           </article>
           <article class="metric-card">
-            <p>Base de treino</p>
+            <p>Imagens de treinamento</p>
             <strong><span data-count="27">27</span> mil</strong>
-            <small>imagens em 120 épocas</small>
+            <small>Exemplos usados para ensinar a IA a reconhecer pessoas e EPIs em 120 ciclos de treinamento.</small>
           </article>
           <article class="metric-card">
-            <p>Oclusão simulada</p>
+            <p>Alertas falsos</p>
             <strong><span class="metric-strike">50</span> → 0</strong>
-            <small>alarmes falsos no teste documentado</small>
+            <small>No teste com pessoas parcialmente encobertas, os alertas incorretos caíram de 50 para zero.</small>
           </article>
           <article class="metric-card">
-            <p>API do servidor</p>
+            <p>Integração do sistema</p>
             <strong><span data-count="122">122</span></strong>
-            <small>rotas HTTP + conexões em tempo real</small>
+            <small>Rotas e conexões ligam câmeras, painéis e servidores para o sistema funcionar em tempo real.</small>
           </article>
         </div>
       </div>
 
+      <div class="evolution-heading reveal">
+        <p>PASSO A PASSO</p>
+        <h3>O que mudou em cada versão</h3>
+      </div>
       <div class="evolution-strip reveal" aria-label="Evolução das versões">
-        <div><span>v14</span><p>Primeiro protótipo desktop</p></div>
+        <div><span>v14</span><p><strong>Primeiro protótipo</strong>Analisava cada imagem separadamente no computador.</p></div>
         <i aria-hidden="true"></i>
-        <div><span>v19</span><p>IA por pessoa e rastreamento</p></div>
+        <div><span>v19</span><p><strong>Reconhecimento por pessoa</strong>Passou a acompanhar cada trabalhador e seus EPIs.</p></div>
         <i aria-hidden="true"></i>
-        <div><span>v20</span><p>Arquitetura com vários servidores</p></div>
+        <div><span>v20</span><p><strong>Mais capacidade</strong>Distribuiu o processamento entre vários servidores.</p></div>
         <i aria-hidden="true"></i>
-        <div><span>20.4</span><p>WebRTC, TV de avisos e Full HD</p></div>
+        <div><span>20.4</span><p><strong>Operação em tempo real</strong>Ganhou câmeras WebRTC, avisos em TV e imagem Full HD.</p></div>
       </div>
     </section>
 
@@ -298,12 +318,25 @@
           <div class="member-copy"><span>03</span><h3>Ana Catarina<br>Paixão</h3><p>AJCAM Linyx</p></div>
         </article>
         <article class="member-card reveal reveal-delay-3">
-          <div class="member-photo member-photo-from-sheet photo-catarina" role="img" aria-label="Foto de Catarina Magalhães"></div>
-          <div class="member-copy"><span>04</span><h3>Catarina<br>Magalhães</h3><p>AJCAM Linyx</p></div>
+          <div class="member-photo member-photo-from-sheet photo-catarina">
+            <span class="sr-only">Foto de Catarina Magalhães</span>
+            <a class="member-portfolio-qr" href="https://catarina-magalhaes-portfolio.vercel.app/" target="_blank" rel="noreferrer" aria-label="Abrir o portfólio de Catarina Magalhães pelo QR Code">
+              <span aria-hidden="true">PORTFÓLIO</span>
+              <img src="assets/qr-portfolio-catarina.png" alt="" width="720" height="720">
+            </a>
+          </div>
+          <div class="member-copy">
+            <span>04</span>
+            <h3>Catarina<br>Magalhães</h3>
+            <a class="member-portfolio-link" href="https://catarina-magalhaes-portfolio.vercel.app/" target="_blank" rel="noreferrer">Ver portfólio <span aria-hidden="true">↗</span></a>
+            <p>AJCAM Linyx</p>
+          </div>
         </article>
         <article class="member-card reveal reveal-delay-4">
-          <div class="member-photo member-photo-placeholder"><span>NS</span><small>Foto pendente</small></div>
-          <div class="member-copy"><span>05</span><h3>Nicolas<br>dos Santos</h3><p>AJCAM Linyx</p></div>
+          <div class="member-photo">
+            <img class="photo-nicolas" src="assets/nicolas.png" alt="Foto de Nícolas dos Santos" width="641" height="868" loading="lazy" decoding="async">
+          </div>
+          <div class="member-copy"><span>05</span><h3>Nícolas<br>dos Santos</h3><p>AJCAM Linyx</p></div>
         </article>
       </div>
     </section>
