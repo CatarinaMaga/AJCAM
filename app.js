@@ -10,12 +10,12 @@ const flowData = {
     text: 'Cada área monitorada pode exigir equipamentos diferentes. O Argos considera esse contexto antes de classificar a situação.'
   },
   alertar: {
-    image: 'assets/demo-alerta.jpg', alt: 'TV de avisos do Argos EPI sinalizando falta de EPI', kicker: 'RESPOSTA IMEDIATA',
+    image: 'assets/demo-tv-alerta.jpg', alt: 'TV de avisos do Argos EPI com alerta vermelho de falta de EPI', kicker: 'RESPOSTA IMEDIATA',
     title: 'A possível ausência vira um alerta claro.',
     text: 'O painel destaca a pessoa e o item não identificado. A TV de avisos pode reforçar a comunicação com sinal visual e voz.'
   },
   registrar: {
-    image: 'assets/demo-cameras.jpg', alt: 'Painel de monitoramento e histórico do Argos EPI', kicker: 'HISTÓRICO AUDITÁVEL',
+    image: 'assets/demo-historico.jpg', alt: 'Histórico individual do Argos EPI com número de violações e gráficos por dia', kicker: 'HISTÓRICO AUDITÁVEL',
     title: 'O evento alimenta acompanhamento e prevenção.',
     text: 'Ocorrências, evidências mínimas e tratativas ajudam a observar tendências e orientar ações preventivas, sempre com conferência humana.'
   }
